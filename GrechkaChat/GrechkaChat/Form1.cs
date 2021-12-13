@@ -12,9 +12,53 @@ namespace GrechkaChat
 {
     public partial class Form1 : Form
     {
+
+        User user = new User("slavon");
+        public string mb_context { get;private set; }
+
         public Form1()
         {
             InitializeComponent();
+            chat.WordWrap = true;
+            
+        }
+
+        private void message_box_TextChanged(object sender, EventArgs e)
+        {
+            this.mb_context = message_box.Text;
+        }
+
+        private void sender_button_Click(object sender, EventArgs e)
+        {
+            
+            chat.Text += $"{user.user_name}:{Environment.NewLine}{mb_context}{Environment.NewLine}{Environment.NewLine}";
+            
+            message_box.Clear();
+        }
+
+        private void chat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter) 
+            { 
+
+                if(e.Modifiers == Keys.Shift)
+                {
+                    e.SuppressKeyPress = false;
+                }
+                else
+                {
+                    e.SuppressKeyPress = true;
+                    sender_button_Click(sender_button, null);
+                }
+            
+              
+            }
+            
         }
     }
 }

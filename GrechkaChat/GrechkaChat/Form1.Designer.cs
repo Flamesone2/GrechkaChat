@@ -29,45 +29,48 @@ namespace GrechkaChat
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.message_box = new System.Windows.Forms.TextBox();
+            this.chat = new System.Windows.Forms.TextBox();
+            this.sender_button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // message_box
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 336);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(301, 61);
-            this.textBox1.TabIndex = 0;
+            this.message_box.Location = new System.Drawing.Point(13, 336);
+            this.message_box.Multiline = true;
+            this.message_box.Name = "message_box";
+            this.message_box.Size = new System.Drawing.Size(301, 61);
+            this.message_box.TabIndex = 0;
+            this.message_box.TextChanged += new System.EventHandler(this.message_box_TextChanged);
             // 
-            // textBox2
+            // chat
             // 
-            this.textBox2.Location = new System.Drawing.Point(13, 9);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox2.Size = new System.Drawing.Size(420, 321);
-            this.textBox2.TabIndex = 1;
+            this.chat.Location = new System.Drawing.Point(13, 9);
+            this.chat.Multiline = true;
+            this.chat.Name = "chat";
+            this.chat.ReadOnly = true;
+            this.chat.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.chat.Size = new System.Drawing.Size(420, 321);
+            this.chat.TabIndex = 1;
+            this.chat.TextChanged += new System.EventHandler(this.chat_TextChanged);
             // 
-            // button1
+            // sender_button
             // 
-            this.button1.Location = new System.Drawing.Point(320, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 61);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.sender_button.Location = new System.Drawing.Point(320, 336);
+            this.sender_button.Name = "sender_button";
+            this.sender_button.Size = new System.Drawing.Size(113, 61);
+            this.sender_button.TabIndex = 2;
+            this.sender_button.Text = "button1";
+            this.sender_button.UseVisualStyleBackColor = true;
+            this.sender_button.Click += new System.EventHandler(this.sender_button_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.sender_button);
+            this.panel1.Controls.Add(this.chat);
+            this.panel1.Controls.Add(this.message_box);
             this.panel1.Location = new System.Drawing.Point(179, 17);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(446, 411);
@@ -79,8 +82,10 @@ namespace GrechkaChat
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -89,9 +94,9 @@ namespace GrechkaChat
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox message_box;
+        private System.Windows.Forms.TextBox chat;
+        private System.Windows.Forms.Button sender_button;
         private System.Windows.Forms.Panel panel1;
     }
 }

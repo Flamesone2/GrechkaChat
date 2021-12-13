@@ -8,5 +8,16 @@ namespace GrechkaChat
 {
     class User
     {
+        public string user_name { get;private set; }
+        
+        public User(string u_name)
+        {
+            this.user_name = u_name;
+        }
+
+        public void SendMessage(Message m)
+        {
+
+        }
     }
 }
