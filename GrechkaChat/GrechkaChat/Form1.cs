@@ -13,14 +13,19 @@ namespace GrechkaChat
     public partial class Form1 : Form
     {
 
-        User user = new User("slavon");
+        private User user { get;  set; }
         public string mb_context { get;private set; }
+        public Message mesObj { get;private set; }
 
         public Form1()
         {
             InitializeComponent();
             chat.WordWrap = true;
-            
+            Random rand = new Random();
+            User u = new User("");
+            u.user_name = rand.Next(10, 99).ToString();
+            this.user = u;
+
         }
 
         private void message_box_TextChanged(object sender, EventArgs e)
@@ -31,8 +36,14 @@ namespace GrechkaChat
         private void sender_button_Click(object sender, EventArgs e)
         {
             
-            chat.Text += $"{user.user_name}:{Environment.NewLine}{mb_context}{Environment.NewLine}{Environment.NewLine}";
-            
+            Network net = new Network();
+
+            Message message = new Message(user.user_name,mb_context);
+
+            net.StartConection(message);
+
+            //chat.Text += $"{user.user_name}:{Environment.NewLine}{mb_context}{Environment.NewLine}{Environment.NewLine}";
+
             message_box.Clear();
         }
 

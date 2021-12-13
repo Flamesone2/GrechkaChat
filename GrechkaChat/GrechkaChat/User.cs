@@ -8,7 +8,7 @@ namespace GrechkaChat
 {
     class User
     {
-        public string user_name { get;private set; }
+        public string user_name { get; set; }
         
         public User(string u_name)
         {

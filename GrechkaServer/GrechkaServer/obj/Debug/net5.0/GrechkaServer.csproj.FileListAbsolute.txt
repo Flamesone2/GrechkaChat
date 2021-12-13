@@ -1,0 +1,16 @@
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\bin\Debug\net5.0\GrechkaServer.exe
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\bin\Debug\net5.0\GrechkaServer.deps.json
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\bin\Debug\net5.0\GrechkaServer.runtimeconfig.json
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\bin\Debug\net5.0\GrechkaServer.runtimeconfig.dev.json
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\bin\Debug\net5.0\GrechkaServer.dll
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\bin\Debug\net5.0\ref\GrechkaServer.dll
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\bin\Debug\net5.0\GrechkaServer.pdb
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\obj\Debug\net5.0\GrechkaServer.csproj.AssemblyReference.cache
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\obj\Debug\net5.0\GrechkaServer.GeneratedMSBuildEditorConfig.editorconfig
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\obj\Debug\net5.0\GrechkaServer.AssemblyInfoInputs.cache
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\obj\Debug\net5.0\GrechkaServer.AssemblyInfo.cs
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\obj\Debug\net5.0\GrechkaServer.csproj.CoreCompileInputs.cache
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\obj\Debug\net5.0\GrechkaServer.dll
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\obj\Debug\net5.0\ref\GrechkaServer.dll
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\obj\Debug\net5.0\GrechkaServer.pdb
+R:\Документы\GIT\GrechkaChat\GrechkaServer\GrechkaServer\obj\Debug\net5.0\GrechkaServer.genruntimeconfig.cache
