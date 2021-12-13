@@ -1,0 +1,10 @@
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\bin\Debug\GrechkaChat.exe.config
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\bin\Debug\GrechkaChat.exe
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\bin\Debug\GrechkaChat.pdb
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.csproj.AssemblyReference.cache
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.Form1.resources
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.Properties.Resources.resources
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.csproj.GenerateResource.cache
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.csproj.CoreCompileInputs.cache
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.exe
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.pdb
