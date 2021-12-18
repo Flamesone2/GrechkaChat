@@ -42,6 +42,8 @@ namespace GrechkaChat
 
             net.StartConection(message);
 
+            chat.Text += $"{net.answer}{Environment.NewLine}";
+
             //chat.Text += $"{user.user_name}:{Environment.NewLine}{mb_context}{Environment.NewLine}{Environment.NewLine}";
 
             message_box.Clear();

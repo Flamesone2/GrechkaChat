@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -7,6 +8,8 @@ namespace GrechkaServer
 {
     class Program
     {
+        public List<IPEndPoint> ips { get; set; }
+
         static void Main(string[] args)
         {
             const string ip = "127.0.0.1";
@@ -19,6 +22,9 @@ namespace GrechkaServer
 
             tcpSocket.Bind(tcpEndPoint);
             tcpSocket.Listen(5);
+
+            List<IPEndPoint> ips = new List<IPEndPoint>();
+            ips.Add(tcpEndPoint);
 
             while (true)
             {
@@ -35,11 +41,23 @@ namespace GrechkaServer
                 }
                 while (listener.Available > 0);
 
-                Console.WriteLine(data.ToString());
-
-                listener.Send(Encoding.UTF8.GetBytes("Успех"));
-
                 listener.Shutdown(SocketShutdown.Both);
+
+                for (int i = 0; i< ips.Count; i++)
+                {
+
+                    listener.Connect(ips[i]);
+                    listener.Send(Encoding.UTF8.GetBytes(data.ToString()));
+                    listener.Shutdown(SocketShutdown.Both);
+                    listener.Close();
+                }
+
+
+               // Console.WriteLine(data.ToString());
+
+                //listener.Send(Encoding.UTF8.GetBytes(data.ToString()));
+
+                
                 listener.Close();
 
             }

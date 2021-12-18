@@ -12,7 +12,9 @@ namespace GrechkaChat
     class Network
     {
 
-        public string message { get;private set; }
+        public string message { get; private set; }
+        public string answer { get; private set; }
+        
 
         public void StartConection(Message mesObj)
         {
@@ -43,9 +45,9 @@ namespace GrechkaChat
             }
             while (tcpSocket.Available > 0);
 
-            Debug.WriteLine(answer.ToString());
+            this.answer = answer.ToString();
 
-           /* tcpSocket.Shutdown(SocketShutdown.Both);*/
+            tcpSocket.Shutdown(SocketShutdown.Both);
             tcpSocket.Close();
 
         }
