@@ -46,20 +46,17 @@ namespace GrechkaServer
                 for (int i = 0; i< ips.Count; i++)
                 {
 
-                    listener.Connect(ips[i]);
-                    listener.Send(Encoding.UTF8.GetBytes(data.ToString()));
-                    listener.Shutdown(SocketShutdown.Both);
-                    listener.Close();
+                    
                 }
 
 
-               // Console.WriteLine(data.ToString());
+                Console.WriteLine(data.ToString());
 
-                //listener.Send(Encoding.UTF8.GetBytes(data.ToString()));
+                listener.Send(Encoding.UTF8.GetBytes(data.ToString()));
 
                 
                 listener.Close();
-
+                listener.Shutdown(SocketShutdown.Both);
             }
         }
     }
