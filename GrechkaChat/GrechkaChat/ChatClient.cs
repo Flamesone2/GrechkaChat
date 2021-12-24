@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GrechkaChat
 {
-    class Network
+    class ChatClient
     {
 
         public string message { get; private set; }

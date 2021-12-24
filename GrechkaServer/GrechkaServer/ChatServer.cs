@@ -28,48 +28,6 @@ namespace GrechkaServer
             tcpListener.Start();
             tcpListener.BeginAcceptTcpClient(new AsyncCallback(TCPConnectCallback), null);
 
-
-
-
-
-
-            List<IPEndPoint> ips = new List<IPEndPoint>();
-            ips.Add(tcpEndPoint);
-
-            while (true)
-            {
-                var listener = tcpSocket.Accept();
-                var buffer = new byte[256];
-                var size = 0;
-                var data = new StringBuilder();
-
-                do
-                {
-                    size = listener.Receive(buffer);
-                    data.Append(Encoding.UTF8.GetString(buffer, 0, size));
-
-                }
-                while (listener.Available > 0);
-
-                listener.Shutdown(SocketShutdown.Both);
-
-                for (int i = 0; i < ips.Count; i++)
-                {
-
-
-                }
-
-
-                Console.WriteLine(data.ToString());
-
-                listener.Send(Encoding.UTF8.GetBytes(data.ToString()));
-
-
-                listener.Close();
-                listener.Shutdown(SocketShutdown.Both);
-            }
-
-
         }
 
         private static void TCPConnectCallback(IAsyncResult _result)

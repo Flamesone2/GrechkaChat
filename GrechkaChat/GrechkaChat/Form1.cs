@@ -36,7 +36,7 @@ namespace GrechkaChat
         private void sender_button_Click(object sender, EventArgs e)
         {
             
-            Network net = new Network();
+            ChatClient net = new ChatClient();
 
             Message message = new Message(user.user_name,mb_context);
 
