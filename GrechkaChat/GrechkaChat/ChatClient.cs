@@ -11,45 +11,48 @@ namespace GrechkaChat
 {
     class ChatClient
     {
+        public static int dataBufferSize = 4096;
 
-        public string message { get; private set; }
-        public string answer { get; private set; }
-        
+        public int id;
+        public TCP tcp;
 
-        public void StartConection(Message mesObj)
+        public ChatClient(int _clientId)
         {
-            const string ip = "127.0.0.1";
-            const int port = 8080;
+            id = _clientId;
+            tcp = new TCP(id);
+        }
 
+        public class TCP
+        {
+            public TcpClient socket;
 
-            var tcpEndPoint = new IPEndPoint(IPAddress.Parse(ip), port);
+            private NetworkStream stream;
+            private readonly int id;
+            private byte[] reciveBuffer;
 
-            var tcpSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-            this.message = $"{mesObj.sender} : {mesObj.message_context}";
-
-            var data = Encoding.UTF8.GetBytes(message);
-
-            tcpSocket.Connect(tcpEndPoint);
-            tcpSocket.Send(data);
-
-            var buffer = new byte[256];
-            var size = 0;
-            var answer = new StringBuilder();
-
-            do
+            public TCP(int _id)
             {
-                size = tcpSocket.Receive(buffer);
-                answer.Append(Encoding.UTF8.GetString(buffer, 0, size));
+                id = _id;
+            }
+
+            public void Connect(TcpClient _socket)
+            {
+                socket = _socket;
+                socket.ReceiveBufferSize = dataBufferSize;
+                socket.SendBufferSize = dataBufferSize;
+
+                stream = socket.GetStream();
+
+                reciveBuffer = new byte[dataBufferSize];
+
+                stream.BeginRead(reciveBuffer, 0, dataBufferSize, ReciveCallBack, null);
 
             }
-            while (tcpSocket.Available > 0);
 
-            this.answer = answer.ToString();
-
-            tcpSocket.Shutdown(SocketShutdown.Both);
-            tcpSocket.Close();
-
+            private void ReciveCallBack(IAsyncResult ar)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
