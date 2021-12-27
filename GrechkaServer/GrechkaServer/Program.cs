@@ -8,10 +8,11 @@ namespace GrechkaServer
 {
     class Program
     {
-        public List<IPEndPoint> ips { get; set; }
-
         static void Main(string[] args)
         {
+            Console.Title = "Grechka Server";
+
+            ChatServer.Run(50, 8080);
         }
     }
 }
