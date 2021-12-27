@@ -49,9 +49,25 @@ namespace GrechkaChat
 
             }
 
-            private void ReciveCallBack(IAsyncResult ar)
+            private void ReciveCallBack(IAsyncResult _result)
             {
-                throw new NotImplementedException();
+                try
+                {
+                    int _byteLength = stream.EndRead(_result);
+                    if(_byteLength <= 0)
+                    {
+                        return;
+                    }
+
+                    byte[] _data = new byte[_byteLength];
+                    Array.Copy(reciveBuffer, _data, _byteLength);
+
+                    stream.BeginRead(reciveBuffer, 0, dataBufferSize, ReciveCallBack, null);
+                }
+                catch (Exception _ex)
+                {
+                    
+                }
             }
         }
     }

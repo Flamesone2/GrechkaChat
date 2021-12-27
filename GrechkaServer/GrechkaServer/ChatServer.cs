@@ -15,6 +15,8 @@ namespace GrechkaServer
         private static TcpListener tcpListener { get; set; }
         public int maxClients { get; private set; }
 
+
+
         public int port { get; private set; }
         public void Run(int _maxClients, int _port)
         {
