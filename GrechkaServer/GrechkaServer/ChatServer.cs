@@ -10,7 +10,7 @@ namespace GrechkaServer
 {
     class ChatServer
     {
-        public Dictionary<int, Client> clients = new Dictionary<int, Client>();
+        public static Dictionary<int, ChatClient> clients = new Dictionary<int, ChatClient>();
 
         private static TcpListener tcpListener { get; set; }
         public static int  maxClients { get; private set; }
@@ -41,7 +41,7 @@ namespace GrechkaServer
             {
                 if(clients[i].tcp.socket == null)
                 {
-                    maxClients[i].tcp.Connect(_client);
+                    clients[i].tcp.Connect(_client);
                     return;
                 }
             }
@@ -51,7 +51,7 @@ namespace GrechkaServer
         {
             for (int i = 1; i <= maxClients; i++)
             {
-                clients.Add(i, new Clients);
+                clients.Add(i, new ChatClient(i));
             }
         }
 

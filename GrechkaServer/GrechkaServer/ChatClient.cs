@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace GrechkaServer
 {
-    class Client
+    class ChatClient
     {
         public static int dataBufferSize = 4096;
 
         public int id;
         public TCP tcp;
 
-        public Client(int _clientId)
+        public ChatClient(int _clientId)
         {
             id = _clientId;
             tcp = new TCP(id);
