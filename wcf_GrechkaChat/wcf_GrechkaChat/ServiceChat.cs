@@ -16,10 +16,10 @@ namespace wcf_GrechkaChat
 
         public int Connect(string name)
         {
-            User user = new User() { id = nextId, userName = name, operationContext = OperationContext.Current };
+            User user = new User() { id = nextId, name = name, operationContext = OperationContext.Current };
             nextId++;
 
-            SendMsg(user.userName + " подключился!");
+            SendMsg(user.name + " подключился!", 0);
             users.Add(user);
             return user.id;
         }
@@ -27,12 +27,29 @@ namespace wcf_GrechkaChat
 
         public void Disconnect(int id)
         {
-            throw new NotImplementedException();
+            var user = users.FirstOrDefault(i => i.id == id);
+            if (user != null)
+            {
+                users.Remove(user);
+                SendMsg(user.name + " отключился!", 0);
+            }
         }
 
-        public void SendMsg(string msg)
+        public void SendMsg(string msg, int id)
         {
-            throw new NotImplementedException();
+            foreach(var item in users)
+            {
+                string answer = DateTime.Now.ToShortTimeString();
+                var user = users.FirstOrDefault(i => i.id == id);
+                if(user != null)
+                {
+                    answer += $": {user.name} ";
+                }
+
+                answer += msg;
+
+                item.operationContext.GetCallbackChannel<IServerChatCallback>().MsgCallback(answer);
+            }
         }
     }
 }
