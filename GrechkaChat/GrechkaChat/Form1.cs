@@ -35,6 +35,8 @@ namespace GrechkaChat
             sender_button.Enabled = false;
             message_box.Enabled = false;
 
+            chat.ScrollBars = ScrollBars.Vertical;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -75,7 +77,7 @@ namespace GrechkaChat
 
         public void MsgCallback(string msg)
         {
-            chat.Text += $"{Environment.NewLine}{msg}{Environment.NewLine}";
+            chat.AppendText($"{Environment.NewLine}{msg}{Environment.NewLine}");  
         }
 
         private void message_box_TextChanged(object sender, EventArgs e)
@@ -86,13 +88,15 @@ namespace GrechkaChat
         private void sender_button_Click(object sender, EventArgs e)
         {
 
-            if(message_box.Text != null)
+            if(this.mb_context != null)
             {
                 client.SendMsg(message_box.Text, user.id);
 
                 //chat.Text += $"{user.user_name}:{Environment.NewLine}{mb_context}{Environment.NewLine}{Environment.NewLine}";
 
+                
                 message_box.Clear();
+                this.mb_context = null;
             }
 
         }

@@ -19,8 +19,9 @@ namespace wcf_GrechkaChat
             User user = new User() { id = nextId, name = name, operationContext = OperationContext.Current };
             nextId++;
 
-            SendMsg(user.name + " подключился!", 0);
+            SendMsg(" " + user.name + " подключился!", 0);
             users.Add(user);
+            Console.WriteLine($"Юзеров: {users.Count}");
             return user.id;
         }
 
@@ -31,7 +32,8 @@ namespace wcf_GrechkaChat
             if (user != null)
             {
                 users.Remove(user);
-                SendMsg(user.name + " отключился!", 0);
+                SendMsg(" " + user.name + " отключился!", 0);
+                Console.WriteLine($"Юзеров: {users.Count}");
             }
         }
 
