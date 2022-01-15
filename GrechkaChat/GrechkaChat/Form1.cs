@@ -7,31 +7,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GrechkaChat.ServiceGrechkaChat;
 
 namespace GrechkaChat
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form , IServiceChatCallback
     {
         bool isConnected = false;
+
+        ServiceChatClient client;
         private User user { get;  set; }
+     
         public string mb_context { get;private set; }
         public Message mesObj { get;private set; }
 
         public Form1()
         {
             InitializeComponent();
+
             chat.WordWrap = true;
+
             Random rand = new Random();
             User u = new User("");
-            u.user_name = rand.Next(10, 99).ToString();
+            u.user_name = $"|{rand.Next(10, 99).ToString()}|";
             this.user = u;
 
+            sender_button.Enabled = false;
+            message_box.Enabled = false;
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DisconectUser();
         }
 
         void ConnectUser()
         {
             if (!isConnected)
             {
+                client = new ServiceChatClient(new System.ServiceModel.InstanceContext(this));
+                user.id = client.Connect(user.user_name);
+                sender_button.Enabled = true;
+                message_box.Enabled = true;
                 ConDiscButton.Text = "Отключиться";
                 isConnected = true;
             }
@@ -41,9 +64,18 @@ namespace GrechkaChat
         {
             if (isConnected)
             {
+                client.Disconnect(user.id);
+                client = null;
+                sender_button.Enabled = false;
+                message_box.Enabled = false;
                 ConDiscButton.Text = "Подключиться";
                 isConnected = false;
             }
+        }
+
+        public void MsgCallback(string msg)
+        {
+            chat.Text += $"{Environment.NewLine}{msg}{Environment.NewLine}";
         }
 
         private void message_box_TextChanged(object sender, EventArgs e)
@@ -53,18 +85,16 @@ namespace GrechkaChat
 
         private void sender_button_Click(object sender, EventArgs e)
         {
-            
-          /*  ChatClient net = new ChatClient();
 
-            Message message = new Message(user.user_name,mb_context);
+            if(message_box.Text != null)
+            {
+                client.SendMsg(message_box.Text, user.id);
 
-            net.StartConection(message);
+                //chat.Text += $"{user.user_name}:{Environment.NewLine}{mb_context}{Environment.NewLine}{Environment.NewLine}";
 
-            chat.Text += $"{net.answer}{Environment.NewLine}";
+                message_box.Clear();
+            }
 
-            //chat.Text += $"{user.user_name}:{Environment.NewLine}{mb_context}{Environment.NewLine}{Environment.NewLine}";
-
-            message_box.Clear();*/
         }
 
         private void chat_TextChanged(object sender, EventArgs e)
@@ -103,5 +133,7 @@ namespace GrechkaChat
                 ConnectUser();
             }
         }
+
+       
     }
 }

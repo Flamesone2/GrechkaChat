@@ -8,3 +8,4 @@ R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\GrechkaServer\bin\Debug\wc
 R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\GrechkaServer\bin\Debug\wcf_GrechkaChat.dll.config
 R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\GrechkaServer\obj\Debug\GrechkaServer.exe
 R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\GrechkaServer\obj\Debug\GrechkaServer.pdb
+R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\GrechkaServer\obj\Debug\GrechkaServer.csproj.CopyComplete
