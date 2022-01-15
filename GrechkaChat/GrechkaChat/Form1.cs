@@ -12,7 +12,7 @@ namespace GrechkaChat
 {
     public partial class Form1 : Form
     {
-
+        bool isConnected = false;
         private User user { get;  set; }
         public string mb_context { get;private set; }
         public Message mesObj { get;private set; }
@@ -28,6 +28,24 @@ namespace GrechkaChat
 
         }
 
+        void ConnectUser()
+        {
+            if (!isConnected)
+            {
+                ConDiscButton.Text = "Отключиться";
+                isConnected = true;
+            }
+        }
+
+        void DisconectUser()
+        {
+            if (isConnected)
+            {
+                ConDiscButton.Text = "Подключиться";
+                isConnected = false;
+            }
+        }
+
         private void message_box_TextChanged(object sender, EventArgs e)
         {
             this.mb_context = message_box.Text;
@@ -36,7 +54,7 @@ namespace GrechkaChat
         private void sender_button_Click(object sender, EventArgs e)
         {
             
-            ChatClient net = new ChatClient();
+          /*  ChatClient net = new ChatClient();
 
             Message message = new Message(user.user_name,mb_context);
 
@@ -46,7 +64,7 @@ namespace GrechkaChat
 
             //chat.Text += $"{user.user_name}:{Environment.NewLine}{mb_context}{Environment.NewLine}{Environment.NewLine}";
 
-            message_box.Clear();
+            message_box.Clear();*/
         }
 
         private void chat_TextChanged(object sender, EventArgs e)
@@ -72,6 +90,18 @@ namespace GrechkaChat
               
             }
             
+        }
+
+        private void ConDiscButton_Click(object sender, EventArgs e)
+        {
+            if (isConnected)
+            {
+                DisconectUser();
+            }
+            else
+            {
+                ConnectUser();
+            }
         }
     }
 }
