@@ -32,6 +32,18 @@ namespace GrechkaChat.ServiceGrechkaChat {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/SendMsg")]
         System.Threading.Tasks.Task SendMsgAsync(string msg, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/AutorisationCheck", ReplyAction="http://tempuri.org/IServiceChat/AutorisationCheckResponse")]
+        void AutorisationCheck(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/AutorisationCheck", ReplyAction="http://tempuri.org/IServiceChat/AutorisationCheckResponse")]
+        System.Threading.Tasks.Task AutorisationCheckAsync(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/RegistrationCheck", ReplyAction="http://tempuri.org/IServiceChat/RegistrationCheckResponse")]
+        void RegistrationCheck(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/RegistrationCheck", ReplyAction="http://tempuri.org/IServiceChat/RegistrationCheckResponse")]
+        System.Threading.Tasks.Task RegistrationCheckAsync(string login, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -91,6 +103,22 @@ namespace GrechkaChat.ServiceGrechkaChat {
         
         public System.Threading.Tasks.Task SendMsgAsync(string msg, int id) {
             return base.Channel.SendMsgAsync(msg, id);
+        }
+        
+        public void AutorisationCheck(string login, string password) {
+            base.Channel.AutorisationCheck(login, password);
+        }
+        
+        public System.Threading.Tasks.Task AutorisationCheckAsync(string login, string password) {
+            return base.Channel.AutorisationCheckAsync(login, password);
+        }
+        
+        public void RegistrationCheck(string login, string password) {
+            base.Channel.RegistrationCheck(login, password);
+        }
+        
+        public System.Threading.Tasks.Task RegistrationCheckAsync(string login, string password) {
+            return base.Channel.RegistrationCheckAsync(login, password);
         }
     }
 }

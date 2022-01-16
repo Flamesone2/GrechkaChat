@@ -29,12 +29,12 @@ namespace GrechkaChat
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.loginBox = new System.Windows.Forms.TextBox();
+            this.passwordBox = new System.Windows.Forms.TextBox();
+            this.SignInButton = new System.Windows.Forms.Button();
+            this.InfoTextBox = new System.Windows.Forms.TextBox();
+            this.SignUpBox = new System.Windows.Forms.Button();
+            this.passwordProofBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,53 +42,55 @@ namespace GrechkaChat
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // loginBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 20);
-            this.textBox1.TabIndex = 0;
+            this.loginBox.Location = new System.Drawing.Point(16, 148);
+            this.loginBox.Name = "loginBox";
+            this.loginBox.Size = new System.Drawing.Size(222, 20);
+            this.loginBox.TabIndex = 0;
             // 
-            // textBox2
+            // passwordBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 196);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 20);
-            this.textBox2.TabIndex = 1;
+            this.passwordBox.Location = new System.Drawing.Point(16, 196);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.Size = new System.Drawing.Size(222, 20);
+            this.passwordBox.TabIndex = 1;
             // 
-            // button1
+            // SignInButton
             // 
-            this.button1.Location = new System.Drawing.Point(16, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(222, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Войти";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SignInButton.Location = new System.Drawing.Point(16, 274);
+            this.SignInButton.Name = "SignInButton";
+            this.SignInButton.Size = new System.Drawing.Size(222, 36);
+            this.SignInButton.TabIndex = 2;
+            this.SignInButton.Text = "Войти";
+            this.SignInButton.UseVisualStyleBackColor = true;
+            this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
             // 
-            // textBox3
+            // InfoTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(16, 18);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(222, 99);
-            this.textBox3.TabIndex = 3;
+            this.InfoTextBox.Location = new System.Drawing.Point(16, 18);
+            this.InfoTextBox.Multiline = true;
+            this.InfoTextBox.Name = "InfoTextBox";
+            this.InfoTextBox.ReadOnly = true;
+            this.InfoTextBox.Size = new System.Drawing.Size(222, 99);
+            this.InfoTextBox.TabIndex = 3;
             // 
-            // button2
+            // SignUpBox
             // 
-            this.button2.Location = new System.Drawing.Point(16, 316);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(222, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Регистрация";
-            this.button2.UseVisualStyleBackColor = true;
+            this.SignUpBox.Location = new System.Drawing.Point(16, 316);
+            this.SignUpBox.Name = "SignUpBox";
+            this.SignUpBox.Size = new System.Drawing.Size(222, 36);
+            this.SignUpBox.TabIndex = 4;
+            this.SignUpBox.Text = "Регистрация";
+            this.SignUpBox.UseVisualStyleBackColor = true;
+            this.SignUpBox.Click += new System.EventHandler(this.SignUpBox_Click);
             // 
-            // textBox4
+            // passwordProofBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(16, 248);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(222, 20);
-            this.textBox4.TabIndex = 5;
+            this.passwordProofBox.Location = new System.Drawing.Point(16, 248);
+            this.passwordProofBox.Name = "passwordProofBox";
+            this.passwordProofBox.Size = new System.Drawing.Size(222, 20);
+            this.passwordProofBox.TabIndex = 5;
             // 
             // label1
             // 
@@ -123,12 +125,12 @@ namespace GrechkaChat
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.passwordProofBox);
+            this.groupBox1.Controls.Add(this.SignUpBox);
+            this.groupBox1.Controls.Add(this.InfoTextBox);
+            this.groupBox1.Controls.Add(this.SignInButton);
+            this.groupBox1.Controls.Add(this.passwordBox);
+            this.groupBox1.Controls.Add(this.loginBox);
             this.groupBox1.Location = new System.Drawing.Point(39, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(253, 371);
@@ -144,6 +146,7 @@ namespace GrechkaChat
             this.Controls.Add(this.groupBox1);
             this.Name = "AutentificationForm";
             this.Text = "AutentificationForm";
+            this.Load += new System.EventHandler(this.AutentificationForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -152,12 +155,12 @@ namespace GrechkaChat
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox loginBox;
+        private System.Windows.Forms.TextBox passwordBox;
+        private System.Windows.Forms.Button SignInButton;
+        private System.Windows.Forms.TextBox InfoTextBox;
+        private System.Windows.Forms.Button SignUpBox;
+        private System.Windows.Forms.TextBox passwordProofBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

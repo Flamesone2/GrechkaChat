@@ -21,6 +21,9 @@ namespace wcf_GrechkaChat
 
         [OperationContract]
         void AutorisationCheck(string login, string password);
+
+        [OperationContract]
+        void RegistrationCheck(string login, string password);
     }
 
     public interface IServerChatCallback
@@ -32,7 +35,7 @@ namespace wcf_GrechkaChat
     public interface IServerAutorisation
     {
         [OperationContract(IsOneWay = true)]
-        void AutCallBack(string msg);
+        void AutCallBack(bool aut, string message);
     }
 
 }

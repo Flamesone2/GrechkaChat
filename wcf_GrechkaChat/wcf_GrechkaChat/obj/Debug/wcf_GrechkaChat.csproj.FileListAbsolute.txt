@@ -5,3 +5,5 @@ R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\wcf_GrechkaChat\obj\Debug\
 R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\wcf_GrechkaChat\obj\Debug\wcf_GrechkaChat.csproj.CoreCompileInputs.cache
 R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\wcf_GrechkaChat\obj\Debug\wcf_GrechkaChat.dll
 R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\wcf_GrechkaChat\obj\Debug\wcf_GrechkaChat.pdb
+R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\wcf_GrechkaChat\bin\Debug\Newtonsoft.Json.dll
+R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\wcf_GrechkaChat\bin\Debug\Newtonsoft.Json.xml

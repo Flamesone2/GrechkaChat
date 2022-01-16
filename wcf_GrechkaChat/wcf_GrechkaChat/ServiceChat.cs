@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -14,7 +16,8 @@ namespace wcf_GrechkaChat
         List<User> users = new List<User>();
         int nextId = 1;
 
-       
+        static string path = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}/GrechkaChat/UserData.json";
+        UsersData[] userData = JsonConvert.DeserializeObject<UsersData[]>(File.ReadAllText(path));
 
         public int Connect(string name)
         {
@@ -41,11 +44,11 @@ namespace wcf_GrechkaChat
 
         public void SendMsg(string msg, int id)
         {
-            foreach(var item in users)
+            foreach (var item in users)
             {
                 string answer = DateTime.Now.ToShortTimeString();
                 var user = users.FirstOrDefault(i => i.id == id);
-                if(user != null)
+                if (user != null)
                 {
                     answer += $" - {user.name} :";
                 }
@@ -58,7 +61,62 @@ namespace wcf_GrechkaChat
 
         public void AutorisationCheck(string login, string password)
         {
-            
+            for (int i = 0; i < userData.Length; i++)
+            {
+                if (userData[i].login == login && userData[i].password == password)
+                {
+                    OperationContext.Current.GetCallbackChannel<IServerAutorisation>().AutCallBack(true, "");
+                    break;
+                }
+                else
+                {
+                    if (i == userData.Length - 1)
+                    {
+                        OperationContext.Current.GetCallbackChannel<IServerAutorisation>().AutCallBack(false, "Неверный логин или пароль!");
+                    }
+                }
+            }
+        }
+
+        public void RegistrationCheck(string login, string password)
+        {
+
+            UsersData[] newData = null;
+            bool success = false;
+
+            for (int i = 0; i < userData.Length; i++)
+            {
+                if (userData[i].login != login)
+                {
+                    if (i == userData.Length - 1)
+                    {
+                        newData = new UsersData[userData.Length + 1];
+                        Array.Copy(userData, newData, userData.Length);
+
+                        newData.LastOrDefault().login = login;
+                        newData.LastOrDefault().password = password;
+
+                        success = true;
+
+                        OperationContext.Current.GetCallbackChannel<IServerAutorisation>().AutCallBack(true, "");
+                        
+                    }
+                }
+                else
+                {
+                    OperationContext.Current.GetCallbackChannel<IServerAutorisation>().AutCallBack(false, "Такой пользователь уже существует!");
+                    break;
+                }
+  
+            }
+
+            if (success)
+            {
+                userData = new UsersData[newData.Length];
+                Array.Copy(newData, userData, newData.Length);
+                File.Create(path).Close();
+                File.WriteAllText(path, JsonConvert.SerializeObject(userData));
+            }
         }
 
     }

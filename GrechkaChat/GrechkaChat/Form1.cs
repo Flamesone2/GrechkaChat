@@ -11,7 +11,7 @@ using GrechkaChat.ServiceGrechkaChat;
 
 namespace GrechkaChat
 {
-    public partial class Form1 : Form , IServiceChatCallback
+    public partial class Form1 : Form , IServiceChatCallback, IServerAutorisation
     {
         bool isConnected = false;
 
@@ -91,10 +91,7 @@ namespace GrechkaChat
             if(this.mb_context != null)
             {
                 client.SendMsg(message_box.Text, user.id);
-
-                //chat.Text += $"{user.user_name}:{Environment.NewLine}{mb_context}{Environment.NewLine}{Environment.NewLine}";
-
-                
+         
                 message_box.Clear();
                 this.mb_context = null;
             }

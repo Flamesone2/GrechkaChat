@@ -50,6 +50,18 @@
   <wsdl:message name="IServiceChat_SendMsg_InputMessage">
     <wsdl:part name="parameters" element="tns:SendMsg" />
   </wsdl:message>
+  <wsdl:message name="IServiceChat_AutorisationCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutorisationCheck" />
+  </wsdl:message>
+  <wsdl:message name="IServiceChat_AutorisationCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutorisationCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceChat_RegistrationCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrationCheck" />
+  </wsdl:message>
+  <wsdl:message name="IServiceChat_RegistrationCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrationCheckResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceChat_MsgCallback_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:MsgCallback" />
   </wsdl:message>
@@ -64,6 +76,14 @@
     </wsdl:operation>
     <wsdl:operation name="SendMsg">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceChat/SendMsg" message="tns:IServiceChat_SendMsg_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorisationCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceChat/AutorisationCheck" message="tns:IServiceChat_AutorisationCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceChat/AutorisationCheckResponse" message="tns:IServiceChat_AutorisationCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrationCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceChat/RegistrationCheck" message="tns:IServiceChat_RegistrationCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceChat/RegistrationCheckResponse" message="tns:IServiceChat_RegistrationCheck_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="MsgCallback">
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceChat/MsgCallback" message="tns:IServiceChat_MsgCallback_OutputCallbackMessage" />
@@ -95,6 +115,24 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AutorisationCheck">
+      <soap12:operation soapAction="http://tempuri.org/IServiceChat/AutorisationCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrationCheck">
+      <soap12:operation soapAction="http://tempuri.org/IServiceChat/RegistrationCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="MsgCallback">
       <soap12:operation soapAction="http://tempuri.org/IServiceChat/MsgCallback" style="document" />

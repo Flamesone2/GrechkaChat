@@ -12,4 +12,9 @@ namespace wcf_GrechkaChat
 
         public string password { get; set; }
     }
+
+    class JsonData
+    {
+        public UsersData[] userData { get; set; }
+    }
 }
