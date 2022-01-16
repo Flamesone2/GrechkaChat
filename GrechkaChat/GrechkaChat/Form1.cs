@@ -37,6 +37,8 @@ namespace GrechkaChat
 
             chat.ScrollBars = ScrollBars.Vertical;
 
+            AutentificationForm autForm = new AutentificationForm();
+            autForm.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)

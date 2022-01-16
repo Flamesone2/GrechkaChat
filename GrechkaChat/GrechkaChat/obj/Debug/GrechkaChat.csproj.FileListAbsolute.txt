@@ -8,3 +8,4 @@ R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaC
 R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.csproj.CoreCompileInputs.cache
 R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.exe
 R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.pdb
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.AutentificationForm.resources
