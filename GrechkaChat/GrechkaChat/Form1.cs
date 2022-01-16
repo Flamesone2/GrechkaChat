@@ -11,7 +11,7 @@ using GrechkaChat.ServiceGrechkaChat;
 
 namespace GrechkaChat
 {
-    public partial class Form1 : Form , IServiceChatCallback, IServerAutorisation
+    public partial class Form1 : Form , IServiceChatCallback
     {
         bool isConnected = false;
 
@@ -79,6 +79,8 @@ namespace GrechkaChat
         {
             chat.AppendText($"{Environment.NewLine}{msg}{Environment.NewLine}");  
         }
+
+       
 
         private void message_box_TextChanged(object sender, EventArgs e)
         {

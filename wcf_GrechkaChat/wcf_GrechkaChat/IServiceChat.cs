@@ -30,12 +30,11 @@ namespace wcf_GrechkaChat
     {
         [OperationContract(IsOneWay = true)]
         void MsgCallback(string msg);
-    }
 
-    public interface IServerAutorisation
-    {
         [OperationContract(IsOneWay = true)]
         void AutCallBack(bool aut, string message);
     }
+
+   
 
 }

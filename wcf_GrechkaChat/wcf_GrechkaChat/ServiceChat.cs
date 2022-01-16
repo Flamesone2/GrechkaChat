@@ -65,14 +65,14 @@ namespace wcf_GrechkaChat
             {
                 if (userData[i].login == login && userData[i].password == password)
                 {
-                    OperationContext.Current.GetCallbackChannel<IServerAutorisation>().AutCallBack(true, "");
+                    OperationContext.Current.GetCallbackChannel<IServerChatCallback>().AutCallBack(true, "");
                     break;
                 }
                 else
                 {
                     if (i == userData.Length - 1)
                     {
-                        OperationContext.Current.GetCallbackChannel<IServerAutorisation>().AutCallBack(false, "Неверный логин или пароль!");
+                        OperationContext.Current.GetCallbackChannel<IServerChatCallback>().AutCallBack(false, "Неверный логин или пароль!");
                     }
                 }
             }
@@ -98,13 +98,13 @@ namespace wcf_GrechkaChat
 
                         success = true;
 
-                        OperationContext.Current.GetCallbackChannel<IServerAutorisation>().AutCallBack(true, "");
+                        OperationContext.Current.GetCallbackChannel<IServerChatCallback>().AutCallBack(true, "");
                         
                     }
                 }
                 else
                 {
-                    OperationContext.Current.GetCallbackChannel<IServerAutorisation>().AutCallBack(false, "Такой пользователь уже существует!");
+                    OperationContext.Current.GetCallbackChannel<IServerChatCallback>().AutCallBack(false, "Такой пользователь уже существует!");
                     break;
                 }
   
