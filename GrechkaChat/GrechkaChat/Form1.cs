@@ -80,7 +80,14 @@ namespace GrechkaChat
             chat.AppendText($"{Environment.NewLine}{msg}{Environment.NewLine}");  
         }
 
-       
+        public void AutCallBack(bool aut, string message)
+        {
+            //TODO: подключить и дать оступ к форме
+            if(aut && !isConnected)
+                {
+                    ConnectUser();
+                }
+        }
 
         private void message_box_TextChanged(object sender, EventArgs e)
         {
@@ -137,6 +144,6 @@ namespace GrechkaChat
             }
         }
 
-       
+        
     }
 }
