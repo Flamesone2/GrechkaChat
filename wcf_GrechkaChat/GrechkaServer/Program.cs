@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace GrechkaServer
 {
@@ -15,6 +16,21 @@ namespace GrechkaServer
             {
                 host.Open();
                 Console.WriteLine("Сервер стартовал!");
+                string path = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}/GrechkaChat";
+
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                    Console.WriteLine($"Директория базы данных создана по пути: {path}");
+                }
+
+                if(!File.Exists($"{path}/UserData.json"))
+                {
+                    File.Create($"{path}/UserData.json");
+                    Console.WriteLine($"{path}/UserData.json");
+                }
+
+
                 Console.ReadLine();
             }
         }

@@ -14,6 +14,8 @@ namespace wcf_GrechkaChat
         List<User> users = new List<User>();
         int nextId = 1;
 
+       
+
         public int Connect(string name)
         {
             User user = new User() { id = nextId, name = name, operationContext = OperationContext.Current };
@@ -53,5 +55,11 @@ namespace wcf_GrechkaChat
                 item.operationContext.GetCallbackChannel<IServerChatCallback>().MsgCallback(answer);
             }
         }
+
+        public void AutorisationCheck(string login, string password)
+        {
+            
+        }
+
     }
 }

@@ -7,7 +7,6 @@ using System.Text;
 
 namespace wcf_GrechkaChat
 {
-    // ПРИМЕЧАНИЕ. Можно использовать команду "Переименовать" в меню "Рефакторинг", чтобы изменить имя интерфейса "IServiceChat" в коде и файле конфигурации.
     [ServiceContract(CallbackContract = typeof(IServerChatCallback))]
     public interface IServiceChat
     {
@@ -19,12 +18,21 @@ namespace wcf_GrechkaChat
 
         [OperationContract(IsOneWay = true)]
         void SendMsg(string msg, int id);
+
+        [OperationContract]
+        void AutorisationCheck(string login, string password);
     }
 
     public interface IServerChatCallback
     {
         [OperationContract(IsOneWay = true)]
         void MsgCallback(string msg);
+    }
+
+    public interface IServerAutorisation
+    {
+        [OperationContract(IsOneWay = true)]
+        void AutCallBack(string msg);
     }
 
 }
