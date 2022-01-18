@@ -60,6 +60,11 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="NumberOfUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="MsgCallback">
     <xs:complexType>
       <xs:sequence>
@@ -73,6 +78,11 @@
         <xs:element minOccurs="0" name="aut" type="xs:boolean" />
         <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NumberOfUsersCallBack">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

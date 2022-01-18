@@ -119,5 +119,9 @@ namespace wcf_GrechkaChat
             }
         }
 
+        public void NumberOfUsers()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

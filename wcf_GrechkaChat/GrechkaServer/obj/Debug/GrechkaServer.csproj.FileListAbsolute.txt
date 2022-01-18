@@ -10,3 +10,4 @@ R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\GrechkaServer\obj\Debug\Gr
 R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\GrechkaServer\obj\Debug\GrechkaServer.pdb
 R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\GrechkaServer\bin\Debug\Newtonsoft.Json.dll
 R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\GrechkaServer\bin\Debug\Newtonsoft.Json.xml
+R:\Документы\GIT\GrechkaChat\wcf_GrechkaChat\GrechkaServer\obj\Debug\GrechkaServer.csproj.CopyComplete

@@ -44,6 +44,12 @@ namespace GrechkaChat.ServiceGrechkaChat {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/RegistrationCheck", ReplyAction="http://tempuri.org/IServiceChat/RegistrationCheckResponse")]
         System.Threading.Tasks.Task RegistrationCheckAsync(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/NumberOfUsers")]
+        void NumberOfUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/NumberOfUsers")]
+        System.Threading.Tasks.Task NumberOfUsersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -54,6 +60,9 @@ namespace GrechkaChat.ServiceGrechkaChat {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/AutCallBack")]
         void AutCallBack(bool aut, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/NumberOfUsersCallBack")]
+        void NumberOfUsersCallBack();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -122,6 +131,14 @@ namespace GrechkaChat.ServiceGrechkaChat {
         
         public System.Threading.Tasks.Task RegistrationCheckAsync(string login, string password) {
             return base.Channel.RegistrationCheckAsync(login, password);
+        }
+        
+        public void NumberOfUsers() {
+            base.Channel.NumberOfUsers();
+        }
+        
+        public System.Threading.Tasks.Task NumberOfUsersAsync() {
+            return base.Channel.NumberOfUsersAsync();
         }
     }
 }

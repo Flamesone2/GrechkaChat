@@ -24,6 +24,9 @@ namespace wcf_GrechkaChat
 
         [OperationContract]
         void RegistrationCheck(string login, string password);
+
+        [OperationContract(IsOneWay = true)]
+        void NumberOfUsers();
     }
 
     public interface IServerChatCallback
@@ -33,6 +36,9 @@ namespace wcf_GrechkaChat
 
         [OperationContract(IsOneWay = true)]
         void AutCallBack(bool aut, string message);
+
+        [OperationContract(IsOneWay = true)]
+        void NumberOfUsersCallBack();
     }
 
    
