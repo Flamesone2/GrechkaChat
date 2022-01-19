@@ -106,6 +106,7 @@ namespace GrechkaChat
             this.UsersOnlineView.TabIndex = 6;
             this.UsersOnlineView.Text = "Список";
             this.UsersOnlineView.UseVisualStyleBackColor = true;
+            this.UsersOnlineView.Click += new System.EventHandler(this.UsersOnlineView_Click);
             // 
             // Form1
             // 

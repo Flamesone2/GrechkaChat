@@ -50,6 +50,12 @@ namespace GrechkaChat.ServiceGrechkaChat {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/NumberOfUsers")]
         System.Threading.Tasks.Task NumberOfUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/SendUserList")]
+        void SendUserList();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/SendUserList")]
+        System.Threading.Tasks.Task SendUserListAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -63,6 +69,9 @@ namespace GrechkaChat.ServiceGrechkaChat {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/NumberOfUsersCallBack")]
         void NumberOfUsersCallBack(int numOfUsers);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/UserListCallBack")]
+        void UserListCallBack(string[] usersList);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -139,6 +148,14 @@ namespace GrechkaChat.ServiceGrechkaChat {
         
         public System.Threading.Tasks.Task NumberOfUsersAsync() {
             return base.Channel.NumberOfUsersAsync();
+        }
+        
+        public void SendUserList() {
+            base.Channel.SendUserList();
+        }
+        
+        public System.Threading.Tasks.Task SendUserListAsync() {
+            return base.Channel.SendUserListAsync();
         }
     }
 }

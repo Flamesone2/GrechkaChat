@@ -106,5 +106,10 @@ namespace GrechkaChat
         {
             throw new NotImplementedException();
         }
+
+        public void UserListCallBack(string[] usersList)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

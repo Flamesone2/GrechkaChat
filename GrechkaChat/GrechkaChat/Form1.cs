@@ -172,6 +172,16 @@ namespace GrechkaChat
                 ConnectUser();
             }
         }
- 
+
+        public void UserListCallBack(string[] usersList)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void UsersOnlineView_Click(object sender, EventArgs e)
+        {
+            UsersListForm ulForm = new UsersListForm();
+            ulForm.Show();
+        }
     }
 }

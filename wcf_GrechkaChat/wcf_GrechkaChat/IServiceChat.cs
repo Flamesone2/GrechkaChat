@@ -27,6 +27,9 @@ namespace wcf_GrechkaChat
 
         [OperationContract(IsOneWay = true)]
         void NumberOfUsers();
+
+        [OperationContract(IsOneWay = true)]
+        void SendUserList();
     }
 
     public interface IServerChatCallback
@@ -39,6 +42,9 @@ namespace wcf_GrechkaChat
 
         [OperationContract(IsOneWay = true)]
         void NumberOfUsersCallBack(int numOfUsers);
+
+        [OperationContract(IsOneWay = true)]
+        void UserListCallBack(string[] usersList);
     }
 
    

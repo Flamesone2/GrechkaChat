@@ -33,6 +33,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IServiceChat_Connect_InputMessage">
@@ -65,6 +66,9 @@
   <wsdl:message name="IServiceChat_NumberOfUsers_InputMessage">
     <wsdl:part name="parameters" element="tns:NumberOfUsers" />
   </wsdl:message>
+  <wsdl:message name="IServiceChat_SendUserList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendUserList" />
+  </wsdl:message>
   <wsdl:message name="IServiceChat_MsgCallback_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:MsgCallback" />
   </wsdl:message>
@@ -73,6 +77,9 @@
   </wsdl:message>
   <wsdl:message name="IServiceChat_NumberOfUsersCallBack_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NumberOfUsersCallBack" />
+  </wsdl:message>
+  <wsdl:message name="IServiceChat_UserListCallBack_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UserListCallBack" />
   </wsdl:message>
   <wsdl:portType name="IServiceChat">
     <wsdl:operation name="Connect">
@@ -97,6 +104,9 @@
     <wsdl:operation name="NumberOfUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceChat/NumberOfUsers" message="tns:IServiceChat_NumberOfUsers_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SendUserList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceChat/SendUserList" message="tns:IServiceChat_SendUserList_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="MsgCallback">
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceChat/MsgCallback" message="tns:IServiceChat_MsgCallback_OutputCallbackMessage" />
     </wsdl:operation>
@@ -105,6 +115,9 @@
     </wsdl:operation>
     <wsdl:operation name="NumberOfUsersCallBack">
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceChat/NumberOfUsersCallBack" message="tns:IServiceChat_NumberOfUsersCallBack_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserListCallBack">
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceChat/UserListCallBack" message="tns:IServiceChat_UserListCallBack_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IServiceChat" type="tns:IServiceChat">
@@ -158,6 +171,12 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="SendUserList">
+      <soap12:operation soapAction="http://tempuri.org/IServiceChat/SendUserList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="MsgCallback">
       <soap12:operation soapAction="http://tempuri.org/IServiceChat/MsgCallback" style="document" />
       <wsdl:output>
@@ -172,6 +191,12 @@
     </wsdl:operation>
     <wsdl:operation name="NumberOfUsersCallBack">
       <soap12:operation soapAction="http://tempuri.org/IServiceChat/NumberOfUsersCallBack" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserListCallBack">
+      <soap12:operation soapAction="http://tempuri.org/IServiceChat/UserListCallBack" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

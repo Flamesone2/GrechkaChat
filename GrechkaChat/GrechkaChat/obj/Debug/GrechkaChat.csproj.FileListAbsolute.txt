@@ -9,3 +9,4 @@ R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaC
 R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.exe
 R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.pdb
 R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.AutentificationForm.resources
+R:\Документы\GIT\GrechkaChat\GrechkaChat\GrechkaChat\obj\Debug\GrechkaChat.UsersListForm.resources
