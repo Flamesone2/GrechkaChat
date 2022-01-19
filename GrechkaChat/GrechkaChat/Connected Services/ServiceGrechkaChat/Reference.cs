@@ -62,7 +62,7 @@ namespace GrechkaChat.ServiceGrechkaChat {
         void AutCallBack(bool aut, string message);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/NumberOfUsersCallBack")]
-        void NumberOfUsersCallBack();
+        void NumberOfUsersCallBack(int numOfUsers);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

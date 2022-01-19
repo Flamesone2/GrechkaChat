@@ -38,7 +38,7 @@ namespace wcf_GrechkaChat
         void AutCallBack(bool aut, string message);
 
         [OperationContract(IsOneWay = true)]
-        void NumberOfUsersCallBack();
+        void NumberOfUsersCallBack(int numOfUsers);
     }
 
    

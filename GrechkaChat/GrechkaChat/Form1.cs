@@ -37,8 +37,16 @@ namespace GrechkaChat
 
             chat.ScrollBars = ScrollBars.Vertical;
 
+            NumberOfUsers.Text = "Людей онлайн:";
+            NumberOfUsers.Visible = false;
+
+            UsersOnlineView.Enabled = false;
+            UsersOnlineView.Visible = false;
+
             AutentificationForm autForm = new AutentificationForm();
             autForm.ShowDialog();
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -57,10 +65,17 @@ namespace GrechkaChat
             {
                 client = new ServiceChatClient(new System.ServiceModel.InstanceContext(this));
                 user.id = client.Connect(user.user_name);
+
                 sender_button.Enabled = true;
                 message_box.Enabled = true;
+
                 ConDiscButton.Text = "Отключиться";
                 isConnected = true;
+
+                NumberOfUsers.Visible = true;
+                UsersOnlineView.Enabled = true;
+                UsersOnlineView.Visible = true;
+                client.NumberOfUsers();
             }
         }
 
@@ -69,11 +84,18 @@ namespace GrechkaChat
             if (isConnected)
             {
                 client.Disconnect(user.id);
+                client.NumberOfUsers();
                 client = null;
+
                 sender_button.Enabled = false;
                 message_box.Enabled = false;
+
                 ConDiscButton.Text = "Подключиться";
                 isConnected = false;
+
+                NumberOfUsers.Visible = false;
+                UsersOnlineView.Enabled = false;
+                UsersOnlineView.Visible = false;
             }
         }
 
@@ -89,6 +111,11 @@ namespace GrechkaChat
                 {
                     ConnectUser();
                 }
+        }
+
+        public void NumberOfUsersCallBack(int numOfUsers)
+        {
+            NumberOfUsers.Text = $"Людей онлайн: {numOfUsers}";
         }
 
         private void message_box_TextChanged(object sender, EventArgs e)
@@ -145,7 +172,6 @@ namespace GrechkaChat
                 ConnectUser();
             }
         }
-
-        
+ 
     }
 }

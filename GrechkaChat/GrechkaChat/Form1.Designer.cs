@@ -34,6 +34,8 @@ namespace GrechkaChat
             this.sender_button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ConDiscButton = new System.Windows.Forms.Button();
+            this.NumberOfUsers = new System.Windows.Forms.Label();
+            this.UsersOnlineView = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +81,7 @@ namespace GrechkaChat
             // 
             // ConDiscButton
             // 
-            this.ConDiscButton.Location = new System.Drawing.Point(640, 17);
+            this.ConDiscButton.Location = new System.Drawing.Point(640, 20);
             this.ConDiscButton.Name = "ConDiscButton";
             this.ConDiscButton.Size = new System.Drawing.Size(86, 30);
             this.ConDiscButton.TabIndex = 4;
@@ -87,11 +89,31 @@ namespace GrechkaChat
             this.ConDiscButton.UseVisualStyleBackColor = true;
             this.ConDiscButton.Click += new System.EventHandler(this.ConDiscButton_Click);
             // 
+            // NumberOfUsers
+            // 
+            this.NumberOfUsers.AutoSize = true;
+            this.NumberOfUsers.Location = new System.Drawing.Point(637, 98);
+            this.NumberOfUsers.Name = "NumberOfUsers";
+            this.NumberOfUsers.Size = new System.Drawing.Size(83, 13);
+            this.NumberOfUsers.TabIndex = 5;
+            this.NumberOfUsers.Text = "Людей онлайн:";
+            // 
+            // UsersOnlineView
+            // 
+            this.UsersOnlineView.Location = new System.Drawing.Point(640, 114);
+            this.UsersOnlineView.Name = "UsersOnlineView";
+            this.UsersOnlineView.Size = new System.Drawing.Size(86, 30);
+            this.UsersOnlineView.TabIndex = 6;
+            this.UsersOnlineView.Text = "Список";
+            this.UsersOnlineView.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UsersOnlineView);
+            this.Controls.Add(this.NumberOfUsers);
             this.Controls.Add(this.ConDiscButton);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
@@ -103,6 +125,7 @@ namespace GrechkaChat
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,6 +136,8 @@ namespace GrechkaChat
         private System.Windows.Forms.Button sender_button;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ConDiscButton;
+        private System.Windows.Forms.Label NumberOfUsers;
+        private System.Windows.Forms.Button UsersOnlineView;
     }
 }
 

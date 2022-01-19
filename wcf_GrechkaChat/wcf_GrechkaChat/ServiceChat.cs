@@ -27,6 +27,7 @@ namespace wcf_GrechkaChat
             SendMsg(" " + user.name + " подключился!", 0);
             users.Add(user);
             Console.WriteLine($"Юзеров: {users.Count}");
+            //NumberOfUsers(users.Count);
             return user.id;
         }
 
@@ -39,6 +40,8 @@ namespace wcf_GrechkaChat
                 users.Remove(user);
                 SendMsg(" " + user.name + " отключился!", 0);
                 Console.WriteLine($"Юзеров: {users.Count}");
+                //NumberOfUsers(users.Count);
+
             }
         }
 
@@ -121,7 +124,11 @@ namespace wcf_GrechkaChat
 
         public void NumberOfUsers()
         {
-            throw new NotImplementedException();
+            int numOfUsers = users.Count;
+            foreach (var item in users)
+            {   
+                item.operationContext.GetCallbackChannel<IServerChatCallback>().NumberOfUsersCallBack(numOfUsers);
+            }
         }
     }
 }
