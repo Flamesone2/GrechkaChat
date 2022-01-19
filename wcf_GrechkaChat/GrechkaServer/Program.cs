@@ -31,9 +31,24 @@ namespace GrechkaServer
                     password = ""
                 };
 
-                File.Create($"{path}/UserData.json");
+                //File.Create($"{path}/UserData.json");
+
+                using(FileStream fstream = new FileStream($"{path}/UserData.json", FileMode.Create))
+                {
+                    fstream.Close();
+                }
+
+                Stream myStream;
+
+                using (myStream = File.Open($"{path}/UserData.json", FileMode.OpenOrCreate, FileAccess.Write))
+                {
+                    StreamWriter myWriter = new StreamWriter(myStream);
+                    myWriter.Write(JsonConvert.SerializeObject(userData));
+                    myWriter.Close();
+                    Console.WriteLine("Бд обновлена");
+                }
+
                 Console.WriteLine($"{path}/UserData.json");
-                File.WriteAllText($"{path}/UserData.json", JsonConvert.SerializeObject(userData));
             }
 
             using (var host = new ServiceHost(typeof(wcf_GrechkaChat.ServiceChat)))

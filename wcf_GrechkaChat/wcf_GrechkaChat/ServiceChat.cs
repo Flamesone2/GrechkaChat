@@ -93,8 +93,9 @@ namespace wcf_GrechkaChat
                         newData = new UsersData[userData.Length + 1];
                         Array.Copy(userData, newData, userData.Length);
 
-                        newData.LastOrDefault().login = login;
-                        newData.LastOrDefault().password = password;
+                        newData[i + 1] = new UsersData();
+                        newData[i+1].login = login;
+                        newData[i+1].password = password;
 
                         success = true;
 

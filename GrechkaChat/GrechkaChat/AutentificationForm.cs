@@ -23,6 +23,7 @@ namespace GrechkaChat
             SignUpBox.Text = "Регистрация";
             passwordProofBox.Enabled = false;
             passwordProofBox.Visible = false;
+            label3.Visible = false;
             isReg = true;
         }
 
@@ -40,9 +41,9 @@ namespace GrechkaChat
         {
             if (isReg)
             {
-                if (/*regex*/ loginBox.Text != null && passwordBox.Text != null)
+                if (/*regex*/ loginBox.Text != "" && passwordBox.Text != "")
                 {
-                    client.RegistrationCheck(loginBox.Text, passwordBox.Text);
+                    client.AutorisationCheck(loginBox.Text, passwordBox.Text);
                 }
                 else
                 {
@@ -72,6 +73,7 @@ namespace GrechkaChat
                 SignUpBox.Text = "Уже есть аккаунт";
                 passwordProofBox.Enabled = true;
                 passwordProofBox.Visible = true;
+                label3.Visible = true;
             }
             else
             {
@@ -80,24 +82,27 @@ namespace GrechkaChat
                 SignUpBox.Text = "Регистрация";
                 passwordProofBox.Enabled = false;
                 passwordProofBox.Visible = false;
+                label3.Visible = false;
             }
 
-            if(/*regex*/ loginBox.Text != null && passwordBox.Text != null && passwordProofBox.Text != null && passwordProofBox.Text == passwordBox.Text)
+            
+        }
+
+        public void AutCallBack(bool aut, string message)
+        {
+            if (aut == true)
             {
-                client.RegistrationCheck(loginBox.Text, passwordBox.Text);
+                UserName.registeredUserName = loginBox.Text;
+                InfoTextBox.Text = "Успех";
+                Close();
             }
             else
             {
-                InfoTextBox.Text = "Поля пусты или не совпадают пароли!";
+                InfoTextBox.Text = message;
             }
         }
 
         public void MsgCallback(string msg)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AutCallBack(bool aut, string message)
         {
             throw new NotImplementedException();
         }
