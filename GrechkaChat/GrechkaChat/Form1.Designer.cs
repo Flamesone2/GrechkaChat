@@ -65,12 +65,13 @@ namespace GrechkaChat
             this.sender_button.Name = "sender_button";
             this.sender_button.Size = new System.Drawing.Size(113, 61);
             this.sender_button.TabIndex = 2;
-            this.sender_button.Text = "button1";
+            this.sender_button.Text = "Отправить";
             this.sender_button.UseVisualStyleBackColor = true;
             this.sender_button.Click += new System.EventHandler(this.sender_button_Click);
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = global::GrechkaChat.Properties.Resources.гречка;
             this.panel1.Controls.Add(this.sender_button);
             this.panel1.Controls.Add(this.chat);
             this.panel1.Controls.Add(this.message_box);
@@ -112,12 +113,15 @@ namespace GrechkaChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GrechkaChat.Properties.Resources.гречка;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.UsersOnlineView);
             this.Controls.Add(this.NumberOfUsers);
             this.Controls.Add(this.ConDiscButton);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

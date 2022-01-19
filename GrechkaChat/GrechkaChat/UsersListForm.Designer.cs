@@ -57,6 +57,7 @@ namespace GrechkaChat
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = global::GrechkaChat.Properties.Resources.гречка;
             this.panel1.Controls.Add(this.RefreshButton);
             this.panel1.Controls.Add(this.UsersListView);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -68,8 +69,11 @@ namespace GrechkaChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GrechkaChat.Properties.Resources.гречка;
             this.ClientSize = new System.Drawing.Size(348, 450);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(364, 489);
+            this.MinimumSize = new System.Drawing.Size(364, 489);
             this.Name = "UsersListForm";
             this.Text = "UsersListForm";
             this.Load += new System.EventHandler(this.UsersListForm_Load);

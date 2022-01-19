@@ -11,15 +11,15 @@ using GrechkaChat.ServiceGrechkaChat;
 
 namespace GrechkaChat
 {
-    public partial class Form1 : Form , IServiceChatCallback
+    public partial class Form1 : Form, IServiceChatCallback
     {
         bool isConnected = false;
 
         ServiceChatClient client;
-        private User user { get;  set; }
-     
-        public string mb_context { get;private set; }
-        public Message mesObj { get;private set; }
+        private User user { get; set; }
+
+        public string mb_context { get; private set; }
+        public Message mesObj { get; private set; }
 
         public Form1()
         {
@@ -54,7 +54,7 @@ namespace GrechkaChat
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -104,11 +104,11 @@ namespace GrechkaChat
 
         public void MsgCallback(string msg)
         {
-            chat.AppendText($"{Environment.NewLine}{msg}{Environment.NewLine}");  
+            chat.AppendText($"{Environment.NewLine}{msg}{Environment.NewLine}");
         }
 
         public void AutCallBack(bool aut, string message)
-        { 
+        {
             throw new NotImplementedException();
         }
 
@@ -125,10 +125,10 @@ namespace GrechkaChat
         private void sender_button_Click(object sender, EventArgs e)
         {
 
-            if(this.mb_context != null)
+            if (this.mb_context != null)
             {
                 client.SendMsg(message_box.Text, user.id);
-         
+
                 message_box.Clear();
                 this.mb_context = null;
             }
@@ -142,10 +142,10 @@ namespace GrechkaChat
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyValue == (char)Keys.Enter) 
-            { 
+            if (e.KeyValue == (char)Keys.Enter)
+            {
 
-                if(e.Modifiers == Keys.Shift)
+                if (e.Modifiers == Keys.Shift)
                 {
                     e.SuppressKeyPress = false;
                 }
@@ -154,10 +154,10 @@ namespace GrechkaChat
                     e.SuppressKeyPress = true;
                     sender_button_Click(sender_button, null);
                 }
-            
-              
+
+
             }
-            
+
         }
 
         private void ConDiscButton_Click(object sender, EventArgs e)

@@ -142,8 +142,11 @@ namespace GrechkaChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GrechkaChat.Properties.Resources.гречка;
             this.ClientSize = new System.Drawing.Size(333, 434);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(349, 473);
+            this.MinimumSize = new System.Drawing.Size(349, 473);
             this.Name = "AutentificationForm";
             this.Text = "AutentificationForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AutentificationForm_FormClosing);
