@@ -52,7 +52,7 @@ namespace GrechkaChat
             }
             else
             {
-                if (/*regex*/ loginBox.Text != null && passwordBox.Text != null && passwordProofBox.Text != null && passwordProofBox.Text == passwordBox.Text)
+                if (/*regex*/ loginBox.Text != "" && passwordBox.Text != "" && passwordProofBox.Text != "" && passwordProofBox.Text == passwordBox.Text)
                 {
                     client.RegistrationCheck(loginBox.Text, passwordBox.Text);
                 }

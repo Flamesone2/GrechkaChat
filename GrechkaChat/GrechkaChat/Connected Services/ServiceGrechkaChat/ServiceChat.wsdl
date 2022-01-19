@@ -54,14 +54,8 @@
   <wsdl:message name="IServiceChat_AutorisationCheck_InputMessage">
     <wsdl:part name="parameters" element="tns:AutorisationCheck" />
   </wsdl:message>
-  <wsdl:message name="IServiceChat_AutorisationCheck_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AutorisationCheckResponse" />
-  </wsdl:message>
   <wsdl:message name="IServiceChat_RegistrationCheck_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistrationCheck" />
-  </wsdl:message>
-  <wsdl:message name="IServiceChat_RegistrationCheck_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RegistrationCheckResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceChat_NumberOfUsers_InputMessage">
     <wsdl:part name="parameters" element="tns:NumberOfUsers" />
@@ -95,11 +89,9 @@
     </wsdl:operation>
     <wsdl:operation name="AutorisationCheck">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceChat/AutorisationCheck" message="tns:IServiceChat_AutorisationCheck_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceChat/AutorisationCheckResponse" message="tns:IServiceChat_AutorisationCheck_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="RegistrationCheck">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceChat/RegistrationCheck" message="tns:IServiceChat_RegistrationCheck_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceChat/RegistrationCheckResponse" message="tns:IServiceChat_RegistrationCheck_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="NumberOfUsers">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceChat/NumberOfUsers" message="tns:IServiceChat_NumberOfUsers_InputMessage" />
@@ -152,18 +144,12 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="RegistrationCheck">
       <soap12:operation soapAction="http://tempuri.org/IServiceChat/RegistrationCheck" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="NumberOfUsers">
       <soap12:operation soapAction="http://tempuri.org/IServiceChat/NumberOfUsers" style="document" />

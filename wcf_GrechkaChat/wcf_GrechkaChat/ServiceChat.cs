@@ -50,7 +50,7 @@ namespace wcf_GrechkaChat
                 var user = users.FirstOrDefault(i => i.id == id);
                 if (user != null)
                 {
-                    answer += $" - {user.name} :";
+                    answer += $" - {user.name}: ";
                 }
 
                 answer += msg;

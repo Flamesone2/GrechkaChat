@@ -19,10 +19,10 @@ namespace wcf_GrechkaChat
         [OperationContract(IsOneWay = true)]
         void SendMsg(string msg, int id);
 
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void AutorisationCheck(string login, string password);
 
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void RegistrationCheck(string login, string password);
 
         [OperationContract(IsOneWay = true)]

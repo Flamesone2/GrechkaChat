@@ -33,16 +33,16 @@ namespace GrechkaChat.ServiceGrechkaChat {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/SendMsg")]
         System.Threading.Tasks.Task SendMsgAsync(string msg, int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/AutorisationCheck", ReplyAction="http://tempuri.org/IServiceChat/AutorisationCheckResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/AutorisationCheck")]
         void AutorisationCheck(string login, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/AutorisationCheck", ReplyAction="http://tempuri.org/IServiceChat/AutorisationCheckResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/AutorisationCheck")]
         System.Threading.Tasks.Task AutorisationCheckAsync(string login, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/RegistrationCheck", ReplyAction="http://tempuri.org/IServiceChat/RegistrationCheckResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/RegistrationCheck")]
         void RegistrationCheck(string login, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceChat/RegistrationCheck", ReplyAction="http://tempuri.org/IServiceChat/RegistrationCheckResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/RegistrationCheck")]
         System.Threading.Tasks.Task RegistrationCheckAsync(string login, string password);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceChat/NumberOfUsers")]

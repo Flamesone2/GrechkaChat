@@ -45,7 +45,10 @@ namespace GrechkaChat
 
             AutentificationForm autForm = new AutentificationForm();
             autForm.ShowDialog();
-
+            if (UserName.registeredUserName != null)
+            {
+                u.user_name = UserName.registeredUserName;
+            }
 
         }
 
