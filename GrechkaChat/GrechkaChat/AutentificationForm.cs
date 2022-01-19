@@ -116,5 +116,13 @@ namespace GrechkaChat
         {
             throw new NotImplementedException();
         }
+
+        private void AutentificationForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(UserName.registeredUserName == null)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

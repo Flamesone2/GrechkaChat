@@ -146,6 +146,7 @@ namespace GrechkaChat
             this.Controls.Add(this.groupBox1);
             this.Name = "AutentificationForm";
             this.Text = "AutentificationForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AutentificationForm_FormClosing);
             this.Load += new System.EventHandler(this.AutentificationForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

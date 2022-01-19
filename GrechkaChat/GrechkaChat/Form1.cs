@@ -108,12 +108,7 @@ namespace GrechkaChat
         }
 
         public void AutCallBack(bool aut, string message)
-        {
-            //TODO: подключить и дать оступ к форме
-            /*if(aut && !isConnected)
-                {
-                    ConnectUser();
-                }*/
+        { 
             throw new NotImplementedException();
         }
 
